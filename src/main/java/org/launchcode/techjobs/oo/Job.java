@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import javax.swing.text.Position;
 import java.util.Objects;
 
 public class Job {
@@ -23,8 +24,7 @@ public class Job {
         nextId++;
     }
 
-    public Job(String name, String employer, String location, String positionType, String coreCompetency) {
-        // help
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -57,33 +57,31 @@ public class Job {
         this.name = name;
     }
     //
-    public String getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
-    public void setEmployer(String employer) {
+    public void setEmployer(Employer employer) {
         this.employer = employer;
     }
     //
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
     //
-    public String positionType() {
+    public PositionType getPositionType() {
         return positionType;
     }
-    public void setPositionType(String positionType) {
+    public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
     //
-    public String coreCompetency() {
+    public CoreCompetency getCoreCompetency() {
         return coreCompetency;
     }
-    public void setCoreCompetency(String coreCompetency) {
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
 }
-
-// got to part 4) using the unit test
