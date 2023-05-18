@@ -93,36 +93,38 @@ public class Job {
     @Override
     public String toString() {
 
-        String jobString = "\nID: ____" + id + "____" + "\n";
+        String emptyField = "";
 
-            if(name == null) {
-                jobString += "Name: ____Data not available____" + "\n";
+        String jobString = "\nID: " + id + "\n";
+
+            if(name == emptyField) {
+                jobString += "Name: Data not available" + "\n";
             } else {
-                jobString += "Name: ____" + name + "____" + "\n";
+                jobString += "Name: " + name + "\n";
             }
 
-            if(employer == null) {
-                jobString += "Employer: ____Data not available____" + "\n";
+            if(employer.value == emptyField) {
+                jobString += "Employer: Data not available" + "\n";
             } else {
-                jobString += "Employer: ____" + employer + "____" + "\n";
+                jobString += "Employer: " + employer + "\n";
             }
 
-            if(location == null) {
-                jobString += "Location: ____Data not available____" + "\n";
+            if(location.value == emptyField) {
+                jobString += "Location: Data not available" + "\n";
             } else {
-                jobString += "Location: ____" + location + "____" + "\n";
+                jobString += "Location: " + location + "\n";
             }
 
-            if(positionType == null) {
-                jobString += "Position Type: ____Data not available____" + "\n";
+            if(positionType.value == emptyField) {
+                jobString += "Position Type: Data not available" + "\n";
             } else {
-                jobString += "Position Type: ____" + positionType + "____" + "\n";
+                jobString += "Position Type: " + positionType + "\n";
             }
 
-            if(coreCompetency == null) {
-                jobString += "Core Competency: ____Data not available____" + "\n";
+            if(coreCompetency.value == emptyField) {
+                jobString += "Core Competency: Data not available" + "\n";
             } else {
-                jobString += "Core Competency: ____" + coreCompetency + "____" + "\n";
+                jobString += "Core Competency: " + coreCompetency + "\n";
             }
 
             return jobString;

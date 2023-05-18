@@ -19,10 +19,10 @@ public class JobTest {
     }
 
     @Test
-    public void testJobForEquality() {
+    public void testJobsForEquality() {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertNotEquals(job1, job2);
+        assertFalse(job1 == job2);
     }
 
 
@@ -54,27 +54,27 @@ public class JobTest {
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String job1String = job1.toString();
         String testString = "\n" +
-                "ID: ____" + job1.getId() + "____\n" +
-                "Name: ____" + "Product tester" + "____\n" +
-                "Employer: ____" + "ACME" + "____\n" +
-                "Location: ____" + "Desert" + "____\n" +
-                "Position Type: ____" + "Quality control" + "____\n" +
-                "Core Competency: ____" + "Persistence" + "____\n";
+                "ID: " + job1.getId() + "\n" +
+                "Name: " + "Product tester" + "\n" +
+                "Employer: " + "ACME" + "\n" +
+                "Location: " + "Desert" + "\n" +
+                "Position Type: " + "Quality control" + "\n" +
+                "Core Competency: " + "Persistence" + "\n";
         assertEquals(job1String, testString);
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        Job job1 = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType(""), new CoreCompetency("Persistence"));
         String job1String = job1.toString();
-        String emptyField = "";
+        String emptyField = "Data not available";
         String testString = "\n" +
-                "ID: ____" + job1.getId() + "____\n" +
-                "Name: ____" + "Product tester" + "____\n" +
-                "Employer: ____" + "ACME" + "____\n" +
-                "Location: ____" + "Desert" + "____\n" +
-                "Position Type: ____" + "Quality control" + "____\n" +
-                "Core Competency: ____" + emptyField + "____\n";
-        assertEquals(job1String, testString);
+                "ID: " + job1.getId() + "\n" +
+                "Name: " + "Product tester" + "\n" +
+                "Employer: " + emptyField + "\n" +
+                "Location: " + "Desert" + "\n" +
+                "Position Type: " + emptyField + "\n" +
+                "Core Competency: " + "Persistence" + "\n";
+        assertEquals(testString, job1String);
     }
 }
